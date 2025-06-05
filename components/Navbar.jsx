@@ -1,69 +1,76 @@
-"use client"
-import Sidebar from "./sidebar";
-import Image from "next/image";
-import { useState } from "react";
-export default function Navbar (){
+"use client";
 
-    const [isOpen, setIsOpen] = useState(false);
+import { useState } from "react";
+import Image from "next/image";
+import Sidebar from "./sidebar";
+
+export default function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="sticky top-0 z-50 bg-white shadow-md w-full">
-    <div className="flex flex-row justify-between">
-
-
-
-      <div className="h-16 flex items-center px-2 justify-between ">
-        <img src="/brownlogonew.svg" alt="logo" className="h-14 py-2 " />
-      </div >
-
-        <div className="hidden  lg:flex flex-row overflow-x-auto    justify-between lg:gap-5 xl:gap-10 items-center text-amber-900 ">
-          <h1>FURNITURE</h1>
-
-          <h1>FLOWER</h1>
-
-          <h1>HOME DECOR</h1>
-
-          <h1>HOME & KITCHEN</h1>
-
-          <h1>LIFESTYLE & FASHION</h1>
-
-          <h1>LIGHTS</h1>
-
-
-        </div>
-        <div className="flex flex-row gap-5 mr-5">
-          
-          <Image src="navbarIcon/search.svg" alt="search" width={20} height={10}  />
-          <Image src="navbarIcon/cart.svg" alt="cart" width={20} height={10} />
-         <Image src="navbarIcon/user.svg" alt=".." width={20} height={10} />
-
-
-
-        <Image
-          src={isOpen ? "/navbarIcon/cross.svg" : "/navbarIcon/3bar.svg"}
-          alt="Menu Toggle"
-          width={30}
-          height={20}
-          onClick={() => setIsOpen(!isOpen)}
-          className="cursor-pointer"
-          
-        />
+<header className="sticky top-0 z-50 bg-white shadow-md w-full">
+      <div className="flex items-center justify-between px-4 h-16">
+        <div className="flex items-center">
+          <img
+            src="/brownlogonew.svg"
+            alt="logo"
+            className="h-14 py-2"
+          />
         </div>
 
+        <div className="hidden lg:flex gap-8 text-amber-900">
+          <h1 className="hover:text-amber-700 cursor-pointer">FURNITURE</h1>
+          <h1 className="hover:text-amber-700 cursor-pointer">FLOWER</h1>
+          <h1 className="hover:text-amber-700 cursor-pointer">HOME DECOR</h1>
+          <h1 className="hover:text-amber-700 cursor-pointer">HOME & KITCHEN</h1>
+          <h1 className="hover:text-amber-700 cursor-pointer">LIFESTYLE & FASHION</h1>
+          <h1 className="hover:text-amber-700 cursor-pointer">LIGHTS</h1>
+        </div>
 
+        <div className="flex items-center gap-5">
+          <Image
+            src="/navbarIcon/search.svg"
+            alt="search"
+            width={20}
+            height={20}
+            className="cursor-pointer"
+          />
+          <Image
+            src="/navbarIcon/cart.svg"
+            alt="cart"
+            width={20}
+            height={20}
+            className="cursor-pointer"
+          />
+          <Image
+            src="/navbarIcon/user.svg"
+            alt="user"
+            width={20}
+            height={20}
+            className="cursor-pointer"
+          />
 
+          <div className="cursor-pointer ">
+            <Image
+              src={isOpen ? "/navbarIcon/cross.svg" : "/navbarIcon/3bar.svg"}
+              alt="Menu Toggle"
+              width={30}
+              height={20}
+              onClick={() => setIsOpen(!isOpen)}
+            />
+          </div>
+        </div>
 
- <div
-        className={`fixed top-16 right-0 h-screen w-74  text-white transform transition-transform duration-400 ease-in-out z-40 ${
-          isOpen ? "translate-x-0" : "translate-x-full"
-        }`}
-      >
-        
-        <Sidebar></Sidebar>
+        <div
+          className={`
+            fixed top-16 right-0  w-72 bg-white shadow-lg
+            transform transition-transform duration-300 ease-in-out z-40
+            ${isOpen ? "translate-x-0" : "translate-x-full"}
+          `}
+        >
+          <Sidebar />
+        </div>
       </div>
-
-
-    </div>
-    </div>
+    </header>
   );
-};
+}

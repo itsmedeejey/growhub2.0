@@ -26,8 +26,8 @@ export default function Instafeed(){
               <Splide
                           options={{
                             type: "loop",
-                            perPage: 7,
-                            gap: "1rem",
+                            perPage: 5,
+                            gap: "1px",
                             pagination: false,
                             arrows: true,
                             drag: true,
@@ -35,14 +35,17 @@ export default function Instafeed(){
                             breakpoints: {
                   1024: {
                     
-                    perPage:5,
+                    perPage:4,
+                    gap:"10px"
 
                   },
                   640:{
-                    perPage:4,
+                    perPage:3,
+                    gap:"10px"
                   },
                   420:{
                     perPage:3,
+                    gap:"10px"
                   }
                 },
                           }}
@@ -56,14 +59,14 @@ export default function Instafeed(){
                             <Link href={"https://www.instagram.com/growhub.shop/"}>
                               <img
                                 src={product.image}
-                                className="aspect-[4/5] md:aspect-square transform ease-in-out duration-300 hover:scale-[105%]  "
+                                className="aspect-[4/5] md:aspect-[4/5] transform ease-in-out duration-300 hover:scale-[105%]  "
                                 loading="lazy"
                                 
                                 />
                             </Link> 
-                              <h1 className="flex justify-center text-xs mt-2">
+                              {/* <h1 className="flex justify-center text-xs mt-2">
                                 {product.name}
-                              </h1>
+                              </h1> */}
                                 </div>
                             </SplideSlide>
                           ))}

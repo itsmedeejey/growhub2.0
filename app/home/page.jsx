@@ -13,18 +13,21 @@ import Collab from "@/components/colab"
 
 export default function home(){
     return(
-        <div className="overflow-x-hidden">
+        <div className="">
             <Navbar></Navbar>
             
             <Banner></Banner>
 
+
+
+            
             
             <div className="mx-5 sm:mx-14">
             <CategoryCard categories={Categories}></CategoryCard>
             </div>
 
             <div className="mx-5 md:mx-14 overflow-hidden">
-            <h1 className=" text-lg text-amber-950 flex justify-center items-center mb-6 mt-10">Instagram Feed</h1>
+            <h1 className=" text-lg text-amber-950 flex justify-center items-center mb-1 mt-10 font-medium">Instagram Feed</h1>
             <div className="sm:mx-14" >
 
             <Instafeed></Instafeed>
