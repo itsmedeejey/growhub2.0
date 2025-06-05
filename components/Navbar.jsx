@@ -1,5 +1,11 @@
+"use client"
+import Sidebar from "./sidebar";
 import Image from "next/image";
+import { useState } from "react";
 export default function Navbar (){
+
+    const [isOpen, setIsOpen] = useState(false);
+
   return (
     <div className="sticky top-0 z-50 bg-white shadow-md w-full">
     <div className="flex flex-row justify-between">
@@ -29,12 +35,32 @@ export default function Navbar (){
           
           <Image src="navbarIcon/search.svg" alt="search" width={20} height={10}  />
           <Image src="navbarIcon/cart.svg" alt="cart" width={20} height={10} />
+         <Image src="navbarIcon/user.svg" alt=".." width={20} height={10} />
 
-          <Image src="navbarIcon/user.svg" alt=".." width={20} height={10} />
-          <Image src="navbarIcon/3bar.svg" alt=".." width={30} height={20} />
 
+
+        <Image
+          src={isOpen ? "/navbarIcon/cross.svg" : "/navbarIcon/3bar.svg"}
+          alt="Menu Toggle"
+          width={30}
+          height={20}
+          onClick={() => setIsOpen(!isOpen)}
+          className="cursor-pointer"
+          
+        />
         </div>
 
+
+
+
+ <div
+        className={`fixed top-16 right-0 h-screen w-74  text-white transform transition-transform duration-400 ease-in-out z-40 ${
+          isOpen ? "translate-x-0" : "translate-x-full"
+        }`}
+      >
+        
+        <Sidebar></Sidebar>
+      </div>
 
 
     </div>

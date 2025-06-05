@@ -52,7 +52,7 @@ export default function Footer () {
             </div>
 
             {/* Bottom Bar .. */}
-            <div className="flex flex-col md:flex-row justify-between items-center border-t pt-4 text-sm font-light gap-4">
+            <div className="flex flex-col md:flex-row justify-between items-center border-t pt-4 text-sm font-light gap-3">
               <a href="mailto:growhub.b2b@gmail.com" className="flex flex-row items-center gap-1 hover:text-red-800">
 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-mail mr-2 group-hover:scale-110 transition-transform duration-300" aria-hidden="true"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"></path><rect x="2" y="4" width="20" height="16" rx="2"></rect></svg>                growhub.b2b@gmail.com
               </a>
@@ -62,8 +62,8 @@ export default function Footer () {
                 <span>Silpukhuri, 3rd Floor, SBI Building, Guwahati, 781003</span>
               </div>
 
-              <div className="flex flex-row items-center  gap-1 text-center">
-                <span><strong className='text-2xl items-center '>©</strong> 2025 Copyright | All rights reserved</span>
+              <div className="flex flex-row  items-baseline gap-1 text-center">
+                <span>© 2025 Copyright | All rights reserved</span>
                 <a href="https://growhub.shop" className="text-red-800 hover:underline font-semibold">GrowHub</a>
               </div>
             </div>

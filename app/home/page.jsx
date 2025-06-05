@@ -17,11 +17,7 @@ export default function home(){
             <Navbar></Navbar>
             
             <Banner></Banner>
-            {/* <img src="/banner5.png"></img> */}
 
-
-
-            
             
             <div className="mx-5 sm:mx-14">
             <CategoryCard categories={Categories}></CategoryCard>

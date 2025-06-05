@@ -16,7 +16,7 @@ export default function CategoryCard({ categories }) {
                   />
                 </div>
                 <div>
-                  <h1 className="text-center text-amber-900 py-1 px-1 text-xs font-semibold">
+                  <h1 className="text-center text-amber-900 py-1 px-1 text-xs font-light  md:font-medium">
                     {item.name}
                   </h1>
                 </div>
