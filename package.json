@@ -9,11 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@splidejs/react-splide": "^0.7.12",
+    "@splidejs/react-splide": "github:splidejs/react-splide",
     "@splidejs/splide": "^4.1.4",
     "next": "15.3.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-icons": "^5.5.0",
     "react-slick": "^0.30.3"
   },
   "devDependencies": {
