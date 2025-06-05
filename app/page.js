@@ -41,11 +41,13 @@ export default function Home(){
             </div>
 
             <div className="mx-0 md:mx-20 mt-20">
-                <h1 className=" mb-4 text-amber-900 flex justify-center-safe items-center">Artisan's Story</h1>
+<h1 className="mb-4 text-amber-900 flex justify-center items-center">
+  {"Artisan's Story"}
+</h1>
                 <Artsiansec></Artsiansec>
             </div>
 
-            <div className="mt-10 " >
+            <div className=" mt-10 " >
                 <h1 className="flex justify-center mb-5 items-center text-amber-900">Collaboration</h1>
             <Collab></Collab>
             </div>
