@@ -63,7 +63,7 @@ export default function Footer () {
               </div>
 
               <div className="flex flex-row items-center  gap-1 text-center">
-                <span><strong className='text-2xl items-center'>©</strong> 2025 Copyright | All rights reserved</span>
+                <span><strong className='text-2xl items-center '>©</strong> 2025 Copyright | All rights reserved</span>
                 <a href="https://growhub.shop" className="text-red-800 hover:underline font-semibold">GrowHub</a>
               </div>
             </div>

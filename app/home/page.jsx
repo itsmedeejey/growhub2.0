@@ -13,7 +13,7 @@ import Collab from "@/components/colab"
 
 export default function home(){
     return(
-        <div className="">
+        <div className="overflow-x-hidden">
             <Navbar></Navbar>
             
             <Banner></Banner>
