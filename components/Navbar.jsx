@@ -9,12 +9,13 @@ export default function Navbar() {
 
   return (
 <header className="sticky top-0 z-50 bg-white shadow-md w-full">
-      <div className="flex items-center justify-between px-4 h-16">
-        <div className="flex items-center">
-          <img
-            src="/brownlogonew.svg"
+      <div className="flex items-center justify-between px-2 md:px-4 h-16">
+        <div className="flex items-center justify-center">
+          <Image
+            src="/brownLogo.png"
             alt="logo"
-            className="h-14 py-2"
+            className="  "
+            width={120} height={120}
           />
         </div>
 

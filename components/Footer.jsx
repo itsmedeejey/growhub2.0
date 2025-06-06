@@ -57,10 +57,30 @@ export default function Footer () {
 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-mail mr-2 group-hover:scale-110 transition-transform duration-300" aria-hidden="true"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"></path><rect x="2" y="4" width="20" height="16" rx="2"></rect></svg>                growhub.b2b@gmail.com
               </a>
 
-              <div className="flex flex-row items-center gap-1 text-center md:text-left">
-                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-map-pin mr-2 flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform duration-300" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                <span>Silpukhuri, 3rd Floor, SBI Building, Guwahati, 781003</span>
-              </div>
+<a
+  className="flex items-start text-sm hover:text-red-800 transition-colors duration-300 group max-w-xs lg:max-w-none"
+  href="#"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="20"
+    height="20"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className="lucide lucide-map-pin mr-2 flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform duration-300"
+    aria-hidden="true"
+  >
+    <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
+    <circle cx="12" cy="10" r="3" />
+  </svg>
+  <span className="lora-font">
+    Silpukhuri, 3rd Floor, SBI Building, Guwahati, 781003
+  </span>
+</a>
 
               <div className="flex flex-row  items-baseline gap-1 text-center">
                 <span>© 2025 Copyright | All rights reserved</span>
@@ -72,7 +92,7 @@ export default function Footer () {
           {/* Right Section:*/}
           <div className="w-full md:w-1/4  px-2 md:px-2  flex flex-col items-center justify-center ">
             <div className="mb-6">
-              <img src="bronwlogonewV.svg" alt="GrowHub Logo" className="w-36 md:w-44 lg:w-48 pt-5" />
+              <img src="brownLogo.png" alt="GrowHub Logo" className="w-50 justify-center md:w-44 lg:w-58 pt-5" />
             </div>
 
             <div className="flex gap-4 lg:gap-6 mb-6 text-black text-xl">
