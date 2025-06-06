@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Sidebar from "./sidebar";
+import Link from "next/link";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,12 +12,15 @@ export default function Navbar() {
 <header className="sticky top-0 z-50 bg-white shadow-md w-full">
       <div className="flex items-center justify-between px-2 md:px-4 h-16">
         <div className="flex items-center justify-center">
+         <Link href={"/"}>
+         
           <Image
             src="/brownLogo.png"
             alt="logo"
             className="  "
             width={120} height={120}
           />
+         </Link>
         </div>
 
         <div className="hidden lg:flex gap-8 text-amber-900">

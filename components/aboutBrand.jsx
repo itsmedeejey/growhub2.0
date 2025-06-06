@@ -34,7 +34,7 @@ export default function AboutBrand() {
     },
   ];
   return (
-    <div>
+    <div className="overflow-x-hidden">
       <div className="flex flex-col gap-5 mt-20 text-amber-900">
         <h1 className="text-amber-900 flex justify-center   text-2xl">
           Who Are We
