@@ -16,7 +16,7 @@ export default function ProductCard({ items }) {
             return (
               <div
                 key={product.id}
-                className="bg-white hover:shadow-md transition-shadow duration-200 overflow-hidden flex flex-col"
+                className="bg-white hover:rounded-lg ease-in-out duration-300  hover:shadow-md transition-shadow  overflow-hidden flex flex-col"
               >
                 <div className="aspect-[4/5] overflow-hidden relative">
                   {off > 0 && (
