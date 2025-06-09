@@ -72,7 +72,7 @@ export default function AboutBrand() {
                   alt={icon.alt}
                   className="md:w-[50px] md:h-[50px] w-[30px] h-[30px] object-contain"
                 />
-                <h1 className="mt-2 text-xs font-thin text-center">
+                <h1 className="mt-2 text-[10px] font-thin text-neutral-500 text-center">
                   {icon.label}
                 </h1>
               </div>

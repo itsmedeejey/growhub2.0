@@ -16,7 +16,7 @@ export default function ProductCard({ items }) {
             return (
               <div
                 key={product.id}
-                className="bg-white hover:rounded-lg ease-in-out duration-300  hover:shadow-md transition-shadow  overflow-hidden flex flex-col"
+                className="bg-white hover:rounded-md ease-in-out duration-300 shadow-sm hover:shadow-md transition-shadow  overflow-hidden flex flex-col"
               >
                 <div className="aspect-[4/5] overflow-hidden relative">
                   {off > 0 && (
@@ -54,12 +54,12 @@ export default function ProductCard({ items }) {
 
 <div className="flex flex-row gap-2 justify-center">
                    {isAvailable && (
-<button className=" rounded-full  bg-[#5A827E] hover:shadow-md text-white  items-center justify-center gap-3 text-sm px-4 py-2 cursor-pointer transition-colors duration-300 ">
+<button className=" rounded-full  bg-[#5A827E] hover:shadow-md text-white  items-center justify-center gap-3 text-xs px-4 py-2 cursor-pointer transition-colors duration-300 ">
                         Buy Now
                     </button>                  )}
                     
                   <button
-                    className={" rounded-full group flex bg-[#EFE5CC] text-slate-800 hover:shadow-md hover:bg-[#CA7842]  hover:text-white items-center justify-center gap-3 text-sm px-4 py-2 cursor-pointer transition-colors duration-300 "
+                    className={" rounded-full group flex bg-[#EFE5CC] text-slate-800 hover:shadow-md hover:bg-[#CA7842]  hover:text-white items-center justify-center gap-3 text-xs px-4 py-2 cursor-pointer transition-colors duration-300 "
                     }
                   >
                     <span>Add to Cart</span>

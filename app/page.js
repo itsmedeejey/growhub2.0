@@ -40,7 +40,7 @@ export default function Home(){
                 <JourneySlide></JourneySlide>
             </div>
 
-            <div className="mx-0 md:mx-20 mt-20">
+            <div className="mx-0  mt-20 overflow-x-hidden">
 <h1 className="mb-4 text-amber-900 flex justify-center items-center">
   {"Artisan's Story"}
 </h1>
