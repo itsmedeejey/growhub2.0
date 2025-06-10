@@ -16,6 +16,11 @@ export default function Sidebar(){
                
                 <h1 className="flex border-b text-center justify-center py-3 text-lg hover:underline cursor-pointer hover:text-amber-800  hover:text-xl  duration-300">brands</h1>
                 <h1 className="flex border-b text-center justify-center py-3 text-lg hover:underline cursor-pointer hover:text-amber-800  hover:text-xl  duration-300">about us</h1>
+                <Link href={"/catalouge"}>
+                
+                                <h1 className="flex border-b text-center justify-center py-3 text-lg hover:underline cursor-pointer hover:text-amber-800  hover:text-xl  duration-300">catalouge</h1>
+                </Link>
+
                 <h1 className="flex border-b text-center justify-center py-3 text-lg hover:underline cursor-pointer hover:text-amber-800  hover:text-xl  duration-300">blogs</h1>
                 <h1 className="flex border-b text-center justify-center py-3 text-lg hover:underline cursor-pointer hover:text-amber-800  hover:text-xl  duration-300">shop</h1>
 

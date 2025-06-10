@@ -12,6 +12,7 @@ export default function Banner(){
         "/banner/4.png",
         "/banner/5.png",
         "/banner/6.png",
+        "/banner/7.png",
     ]
     return(
         <div>
