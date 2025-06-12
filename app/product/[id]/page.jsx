@@ -1,6 +1,6 @@
 'use client';
 import axios from 'axios';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
@@ -23,14 +23,14 @@ const ProductPage = () => {
   const increase = () => setQuantity((prev) => (prev < 100 ? prev + 1 : prev));
 
   const product = {
-    id: '388',
+    id: '335',
     name: 'ROUND TABLE CORNER',
     price: '6999',
     higher_price: '11999',
     discount_amount: '1',
     description:
       "A cane rattan side table with a circular top and tripod base is a stylish, lightweight piece of furniture. It features a handwoven rattan surface, supported by three sturdy legs, blending natural aesthetics with functionality.",
-     images: [
+    images: [
       '/products/2025030833565.webp',
       '/products/2025030857716.webp',
       '/products/2025030823165.webp',
@@ -47,25 +47,37 @@ const ProductPage = () => {
     ((product.higher_price - product.price) / product.higher_price) * 100
   );
 
+  // ✅ Log product view with deviceId
+  useEffect(() => {
+    const getOrCreateDeviceId = () => {
+      let deviceId = localStorage.getItem('device_id');
+      if (!deviceId) {
+        deviceId = crypto.randomUUID();
+        localStorage.setItem('device_id', deviceId);
+      }
+      return deviceId;
+    };
 
-// logging product view here
-const logView = async (product_id) => {
+    const logView = async () => {
+      const deviceId = getOrCreateDeviceId();
+      const now = new Date();
+      const viewed_hour = now.toISOString().slice(0, 13).replace('T', ' ');
 
-  const now = new Date();
-  const viewed_hour = now.toISOString().slice(0, 13).replace('T', ' ');
-  try {
-    const res = await axios.post('/api/product-view', {
-      product_id,
-      viewed_hour
-    });
-    console.log('Logged:', res.data);
-  } catch (err) {
-    console.error('Logging failed:', err.response?.data || err.message);
-  }
-};
-  const product_id = product.id
+      try {
+        const res = await axios.post('/api/product-view', {
+          product_id: product.id,
+          viewed_hour,
+          deviceId,
+        });
+        console.log('Logged:', res.data);
+      } catch (err) {
+        console.error('Logging failed:', err.response?.data || err.message);
+      }
+    };
 
-logView(product_id);
+    logView();
+  }, []);
+
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
@@ -85,10 +97,7 @@ logView(product_id);
                 grid: {
                   rows: 2,
                   cols: 2,
-                  gap: {
-                    row: '1rem',
-                    col: '1rem',
-                  },
+                  gap: { row: '1rem', col: '1rem' },
                 },
                 breakpoints: {
                   1024: {
@@ -134,13 +143,8 @@ logView(product_id);
 
           {/* Product Details */}
           <div className="bg-white rounded-xl shadow p-6 flex flex-col">
-            <h1 className="text-2xl md:text-3xl font-bold font-playfair mb-1">
-              {product.name}
-            </h1>
-
-            <a className="text-blue-800 mb-4" href="#">
-              {product.retailer}
-            </a>
+            <h1 className="text-2xl md:text-3xl font-bold font-playfair mb-1">{product.name}</h1>
+            <a className="text-blue-800 mb-4" href="#">{product.retailer}</a>
             <p className="text-gray-600 mb-6">{product.description}</p>
 
             <div className="mb-1">
@@ -165,24 +169,9 @@ logView(product_id);
             <label className="block text-sm font-medium mb-2">Quantity:</label>
             <div className="flex flex-col lg:flex-row gap-2 mt-2">
               <div className="flex items-center gap-0 max-w-xs">
-                <button
-                  className="px-3 py-1 border rounded-l-full hover:bg-gray-100 transition"
-                  onClick={decrease}
-                >
-                  −
-                </button>
-                <input
-                  type="number"
-                  min={1}
-                  value={quantity}
-                  className="w-10 py-1 text-center border focus:outline-none focus:ring-2 focus:ring-slate-500"
-                />
-                <button
-                  onClick={increase}
-                  className="px-3 py-1 border rounded-r-full hover:bg-gray-100 transition"
-                >
-                  +
-                </button>
+                <button className="px-3 py-1 border rounded-l-full hover:bg-gray-100 transition" onClick={decrease}>−</button>
+                <input type="number" min={1} value={quantity} className="w-10 py-1 text-center border focus:outline-none focus:ring-2 focus:ring-slate-500" />
+                <button onClick={increase} className="px-3 py-1 border rounded-r-full hover:bg-gray-100 transition">+</button>
               </div>
               <button className="text-lg h-12 text-white bg-blue-800 px-5 rounded-3xl p-2">Add to Cart</button>
               <button className="text-lg h-12 border rounded-3xl p-2 px-5 hover:bg-green-700 hover:text-white">Buy Now</button>
@@ -205,16 +194,9 @@ logView(product_id);
             </div>
 
             {/* Key Features */}
-            <div
-              className="cursor-pointer mt-10 p-3 border-t border-b border-slate-400 flex justify-between"
-              onClick={() => setDropdownTextOpen(!dropdownTextOpen)}
-            >
+            <div className="cursor-pointer mt-10 p-3 border-t border-b border-slate-400 flex justify-between" onClick={() => setDropdownTextOpen(!dropdownTextOpen)}>
               <button className="font-semibold text-lg">Key Features</button>
-              <ChevronDownIcon
-                className={`h-10 w-10 text-slate-900 transition-transform duration-300 ${
-                  dropdownTextOpen ? 'rotate-180' : ''
-                }`}
-              />
+              <ChevronDownIcon className={`h-10 w-10 text-slate-900 transition-transform duration-300 ${dropdownTextOpen ? 'rotate-180' : ''}`} />
             </div>
             {dropdownTextOpen && (
               <ul className="mt-2 text-sm md:text-lg text-gray-700 mb-6 space-y-1">
@@ -226,16 +208,9 @@ logView(product_id);
             )}
 
             {/* Product Details */}
-            <div
-              className="cursor-pointer p-3 border-b border-slate-400 flex justify-between"
-              onClick={() => setDropdownProductDetails(!dropdownProductDetails)}
-            >
+            <div className="cursor-pointer p-3 border-b border-slate-400 flex justify-between" onClick={() => setDropdownProductDetails(!dropdownProductDetails)}>
               <button className="font-semibold text-lg">Product Details</button>
-              <ChevronDownIcon
-                className={`h-10 w-10 text-slate-900 transition-transform duration-300 ${
-                  dropdownProductDetails ? 'rotate-180' : ''
-                }`}
-              />
+              <ChevronDownIcon className={`h-10 w-10 text-slate-900 transition-transform duration-300 ${dropdownProductDetails ? 'rotate-180' : ''}`} />
             </div>
             {dropdownProductDetails && (
               <ul className="mt-2 text-sm md:text-lg text-gray-700 mb-6 space-y-1">
