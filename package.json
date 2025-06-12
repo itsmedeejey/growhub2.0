@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
+    "@microsoft/clarity": "^1.0.0",
     "@splidejs/react-splide": "github:splidejs/react-splide",
     "@splidejs/splide": "^4.1.4",
     "@splidejs/splide-extension-grid": "^0.4.1",
