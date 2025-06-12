@@ -8,14 +8,16 @@ const ProductFilter = ({ products }) => {
 
   const filteredProducts = products
     .filter(product => 
-      product.price <= maxPrice &&
+      product.unit_price <= maxPrice &&
       product.name.toLowerCase().includes(searchTerm.toLowerCase())
     )
     .sort((a, b) => {
-      if (sortOrder === 'lowToHigh') return a.price - b.price;
-      if (sortOrder === 'highToLow') return b.price - a.price;
+      if (sortOrder === 'lowToHigh') return a.unit_price - b.unit_price;
+      if (sortOrder === 'highToLow') return b.unit_price - a.unit_price;
       return 0;
     });
+console.log("Filtered products:", filteredProducts);
+console.log("Original products from API:", products);
 
   return (
      
