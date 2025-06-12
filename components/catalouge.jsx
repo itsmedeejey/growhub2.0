@@ -58,6 +58,7 @@ export default function Catalouge () {
         maxShadowOpacity={0.5}
         showCover={true}
         mobileScrollSupport={true}
+        swipeDistance={20}
         className="shadow-xl rounded-md"
       >
         {imagePages.map((src, index) => (
