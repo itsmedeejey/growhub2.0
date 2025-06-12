@@ -23,7 +23,7 @@ const ProductPage = () => {
   const increase = () => setQuantity((prev) => (prev < 100 ? prev + 1 : prev));
 
   const product = {
-    id: '3722',
+    id: '388',
     name: 'ROUND TABLE CORNER',
     price: '6999',
     higher_price: '11999',
