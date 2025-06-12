@@ -4,7 +4,9 @@ import { NextResponse } from 'next/server'
 export async function POST(req) {
   try {
     const { product_id, viewed_hour } = await req.json()
-    const ip = req.headers.get('x-forwarded-for')?.split(',')[0] || 'unknown'
+    const forwarded = req.headers.get('x-forwarded-for');
+    const ip = forwarded ? forwarded.split(',')[0].trim() : 'unknown';
+
 
     await db.query(
       `INSERT IGNORE INTO product_views (product_id, ip_address, viewed_hour) VALUES (?, ?, ?)`,
