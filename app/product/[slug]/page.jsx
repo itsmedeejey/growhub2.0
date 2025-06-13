@@ -53,11 +53,8 @@ const [relatedProducts, setRelatedProducts] = useState([]);
         console.error('Error fetching product:', error);
       }
     };
-    
-
-
     fetchProductData();
-  }, []);
+  },[slug]);
 
   useEffect(() => {
     if (!product) return;
