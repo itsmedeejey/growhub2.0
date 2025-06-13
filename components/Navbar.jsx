@@ -20,7 +20,7 @@ export default function Navbar() {
           <Image
             src="/brownLogo.png"
             alt="logo"
-            className=" h-12 w-30 "
+            className=" h-12 w- "
             width={120} height={120}
             />
             </div>
@@ -28,8 +28,13 @@ export default function Navbar() {
         </div>
 
         <div className="hidden lg:flex gap-8 text-amber-900">
+<Link href={"/"}>
+
           <h1 className="hover:text-amber-700 cursor-pointer">FURNITURE</h1>
+</Link>
+
           <h1 className="hover:text-amber-700 cursor-pointer">FLOWER</h1>
+
           <h1 className="hover:text-amber-700 cursor-pointer">HOME DECOR</h1>
           <h1 className="hover:text-amber-700 cursor-pointer">HOME & KITCHEN</h1>
           <h1 className="hover:text-amber-700 cursor-pointer">LIFESTYLE & FASHION</h1>
