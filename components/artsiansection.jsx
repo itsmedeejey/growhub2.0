@@ -74,8 +74,11 @@ export default function Artsiansec() {
         </Splide>
       </div>
 
-      <div className="relative mx-7 md:mx-40">
-        <video
+
+<div className="flex  justify-center items-center ">
+
+      <div className=" grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-5 md:gap-10 px-3 md:px-10 py-5 md:py-10">
+        {/* <video
           className=" overflow-x-hidden mt-10 rounded-xl"
           width="1280"
           height="900"
@@ -86,17 +89,55 @@ export default function Artsiansec() {
           autoPlay
           loop
           playsInline
-        >
+          >
           <source src="/videos/artsian.mp4" type="video/mp4" />
+          </video> */}
+        <video  className="w-auto h-[400px]  justify-center items-center "
+
+width="1280"
+height="900"
+
+preload="auto"
+muted
+
+autoPlay
+loop
+playsInline >
+          <source src="/videos/artvid2.mp4" type="video/mp4"/>
         </video>
 
-        {/* <h1 className="absolute  md:top-4 lg:top-10  md:right-5 max-w-[300px] md:max-w-sm lg:max-w-lg leading-tight  text-xs md:text-lg lg:text-2xl p-5 rounded-sm font-light text-neutral-200 bg-neutral-900/50 z-40">
-          "In the heart of our communities, hands tell stories—of heritage,
-          resilience, and craft. At GrowHub, we work alongside local artisans,
-          transforming nature’s gifts into timeless creations. Each piece, a
-          symbol of sustainability. Each maker, a keeper of tradition."
-        </h1> */}
+      
+      
+      
+       
+        <video className="w-auto h-[400px]  "
+         width="1280"
+         height="900"
+         
+         preload="auto"
+         muted
+         autoPlay
+         loop
+         playsInline >
+          <source src="/videos/artvid4.mp4" type="video/mp4"/>
+        </video>
+
+       
+        <video className="w-auto h-[400px] hidden md:block  "
+         width="1280"
+         height="900"
+         
+         preload="auto"
+         muted
+         autoPlay
+         loop
+         playsInline >
+          <source src="/videos/artvid5.mp4" type="video/mp4"/>
+        </video>
+
+       
       </div>
+            </div>
     </div>
   );
 }

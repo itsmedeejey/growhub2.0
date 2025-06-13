@@ -1,10 +1,9 @@
 'use client';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
+import Image from 'next/image';
 import { useParams } from 'next/navigation';
-
+import ProductCard from '@/components/productCard';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
 import '@splidejs/splide/dist/css/splide.min.css';
@@ -20,11 +19,28 @@ const ProductPage = () => {
   const [dropdownProductDetails, setDropdownProductDetails] = useState(false);
   const [quantity, setQuantity] = useState(1);
   const [product, setProduct] = useState(null);
+const [relatedProducts, setRelatedProducts] = useState([]);
 
   const decrease = () => setQuantity((prev) => (prev > 1 ? prev - 1 : prev));
   const increase = () => setQuantity((prev) => (prev < 100 ? prev + 1 : prev));
 
   const { slug } = useParams();
+  useEffect(() => {
+  if (!slug) return;
+
+  const getrelatedProducts = async () => {
+    try {
+      const res = await fetch(`/api/related-products/${slug}`);
+      const related = await res.json();
+      setRelatedProducts(related);
+    } catch (err) {
+      console.error("Error fetching related products:", err);
+    }
+  };
+
+  getrelatedProducts();
+}, [slug]);
+
 
   useEffect(() => {
     if (!slug) return;
@@ -37,6 +53,8 @@ const ProductPage = () => {
         console.error('Error fetching product:', error);
       }
     };
+    
+
 
     fetchProductData();
   }, []);
@@ -72,7 +90,7 @@ const ProductPage = () => {
 
   if (!product) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
+      <div className="min-h-screen flex flex-col  items-center justify-center">
         <p>Loading product...</p>
       </div>
     );
@@ -91,7 +109,6 @@ const ProductPage = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      <Navbar />
       <main className="max-w-7xl mx-auto p-4 sm:p-6 lg:px-8 py-2">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Carousel */}
@@ -153,13 +170,13 @@ const ProductPage = () => {
 
           {/* Product Details */}
           <div className="bg-white rounded-xl shadow p-6 flex flex-col">
-            <h1 className="text-2xl md:text-3xl font-bold font-playfair mb-1">{product.name}</h1>
+            <h1 className="text-xl md:text-2xl font-mediums  text-amber-900 mb-1">{product.name}</h1>
             <a className="text-blue-800 mb-4" href="#">{product.retailer}</a>
             <p className="text-gray-600 mb-6">{product.description}</p>
 
             <div className="mb-1">
-              <span className="text-2xl text-blue-900">₹{product.unit_price}</span>
-              <span className="ml-3 line-through text-red-500">₹{product.higher_price}</span>
+              <span className="text-2xl text-amber-900">₹{product.unit_price}</span>
+              <span className="ml-3 line-through text-neutral-800">₹{product.higher_price}</span>
               <span className="ml-4 bg-green-100 text-green-800 px-2 py-1 rounded text-sm font-medium">
                 {discount}% Discount
               </span>
@@ -181,8 +198,8 @@ const ProductPage = () => {
                 <input type="number" readOnly value={quantity} className="w-10 py-1 text-center border" />
                 <button onClick={increase} className="px-3 py-1 border rounded-r-full">+</button>
               </div>
-              <button className="text-lg h-12 text-white bg-blue-800 px-5 rounded-3xl">Add to Cart</button>
-              <button className="text-lg h-12 border rounded-3xl px-5 hover:bg-green-700 hover:text-white">Buy Now</button>
+              <button className="text-md h-10 cursor-pointer  text-white bg-[#CA7842] hover:bg-amber-700  px-5 rounded-3xl">Add to Cart</button>
+              <button className="text-md h-10 text-neutral-800 cursor-pointer border rounded-3xl px-5 bg-white hover:bg-[#5A827E] hover:text-white">Buy Now</button>
             </div>
 
             {/* Icons */}
@@ -194,16 +211,16 @@ const ProductPage = () => {
                 { img: 'credit-card.png', title: 'SECURE PAYMENTS', desc: 'Safe, Fast And Secure Online Payments' },
               ].map((icon, i) => (
                 <div key={i} className="flex flex-col items-center text-center pt-2">
-                  <img className="h-12" src={`/productpageIcons/${icon.img}`} alt={icon.title} />
-                  <h1 className="font-semibold">{icon.title}</h1>
-                  <p>{icon.desc}</p>
+                  <img className="h-8" src={`/productpageIcons/${icon.img}`} alt={icon.title} />
+                  <h1 className="font-light text-md">{icon.title}</h1>
+                  <p className='font-thin text-8px]'>{icon.desc}</p>
                 </div>
               ))}
             </div>
 
             {/* Dropdown Sections */}
             <div className="cursor-pointer mt-10 p-3 border-t border-b border-slate-400 flex justify-between" onClick={() => setDropdownTextOpen(!dropdownTextOpen)}>
-              <button className="font-semibold text-lg">Key Features</button>
+              <button className="font-medium text-lg">Key Features</button>
               <ChevronDownIcon className={`h-6 w-6 transition-transform ${dropdownTextOpen ? 'rotate-180' : ''}`} />
             </div>
             {dropdownTextOpen && (
@@ -216,7 +233,7 @@ const ProductPage = () => {
             )}
 
             <div className="cursor-pointer p-3 border-b border-slate-400 flex justify-between" onClick={() => setDropdownProductDetails(!dropdownProductDetails)}>
-              <button className="font-semibold text-lg">Product Details</button>
+              <button className="font-medium text-lg">Product Details</button>
               <ChevronDownIcon className={`h-6 w-6 transition-transform ${dropdownProductDetails ? 'rotate-180' : ''}`} />
             </div>
             {dropdownProductDetails && (
@@ -231,13 +248,14 @@ const ProductPage = () => {
         </div>
       </main>
 
-      <section className="px-5 pt-10">
-        <h2 className="text-2xl md:text-[35px] text-slate-700 text-center font-playfair mb-5">
+      <section className="mx-5 md:mx-14 md:mt-10 pt-10">
+        <h2 className="text-xl md:text-[26px] text-amber-900 text-center font-thin  mb-1">
           Explore Related Products
         </h2>
+
+        <ProductCard items={relatedProducts} ></ProductCard>
       </section>
 
-      <Footer />
     </div>
   );
 };

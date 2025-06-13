@@ -54,7 +54,7 @@ export default function Instafeed(){
                    
                  {instaFeedProducts.map((product, idx) => (
                      <SplideSlide key={idx}>
-                        <div className=" md:p-2 ">
+                        <div className=" md:p-5  ">
 
                             <Link href={"https://www.instagram.com/growhub.shop/"}>
                               <img

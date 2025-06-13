@@ -21,7 +21,7 @@ console.log("Original products from API:", products);
 
   return (
      
-    <div className="p-4 max-w-7xl md:mx-20 ">
+    <div className="p-4 md:mx-20 ">
       <div className="flex flex-wrap gap-1 md:gap-4 items-center mt-6 mb-3">
       
 

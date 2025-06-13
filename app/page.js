@@ -13,7 +13,7 @@ import Clarity from '@microsoft/clarity';
 export default function Home(){
     return(
         <div className="">
-            <Navbar></Navbar>
+            
             
             <Banner></Banner>
 
@@ -26,7 +26,7 @@ export default function Home(){
             </div>
 
             <div className="mx-5 md:mx-14 overflow-hidden">
-            <h1 className=" text-lg text-amber-950 flex justify-center items-center mb-1 mt-10 font-medium">Instagram Feed</h1>
+            <h1 className=" text-lg text-amber-950 flex justify-center items-center mb-1 mt-10 font-thin">Instagram Feed</h1>
             <div className="sm:mx-14" >
 
             <Instafeed></Instafeed>
@@ -41,7 +41,7 @@ export default function Home(){
                 <JourneySlide></JourneySlide>
             </div>
 
-            <div className="mx-0  mt-20 overflow-x-hidden">
+            <div className="mx-0 md:px-14 mt-20 overflow-x-hidden">
 <h1 className="mb-4 text-amber-900 flex justify-center items-center">
   {"Artisan's Story"}
 </h1>
@@ -53,7 +53,6 @@ export default function Home(){
             <Collab></Collab>
             </div>
 
-            <Footer></Footer>
         </div>
     )
 }

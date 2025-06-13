@@ -22,7 +22,7 @@ export default function JourneySlide(){
          <Splide
                           options={{
                             type: "loop",
-                            perPage: 6,
+                            perPage: 5,
                             gap: "1rem",
                             pagination: false,
                             arrows: true,

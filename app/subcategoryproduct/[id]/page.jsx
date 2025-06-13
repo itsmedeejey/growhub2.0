@@ -5,8 +5,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 
 import ProductFilter from "@/components/ProductFilter";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+
 import Banner from "@/components/banner";
 
 export default function ProductPage() {
@@ -32,7 +31,6 @@ export default function ProductPage() {
   }, [id]);
   return (
     <div className="bg-white">
-      <Navbar />
 
       <div className="relative">
         <Banner />
@@ -48,7 +46,6 @@ export default function ProductPage() {
         )}
       </div>
 
-      <Footer />
     </div>
   );
 }

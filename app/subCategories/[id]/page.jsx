@@ -6,7 +6,6 @@ import Banner from "@/components/banner";
 export default function SubCategoryPage  ()  {
   return (
     <div>
-      <Navbar></Navbar>
       <div className="relative">
         <Banner></Banner>
       </div>
@@ -14,7 +13,6 @@ export default function SubCategoryPage  ()  {
       <div className=" mx-7 md:mx-30 lg:mx-40 justify-center items-center">
         <SubCatagoryCard categories={subcatData}></SubCatagoryCard>
       </div>
-      <Footer></Footer>
     </div>
   );
 };

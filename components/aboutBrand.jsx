@@ -39,7 +39,7 @@ export default function AboutBrand() {
         <h1 className="text-amber-900 flex justify-center   text-2xl">
           Who Are We
         </h1>
-        <p className="flex justify-center text-center mx-7 md:mx-40 leading-normal md:leading-normal text-xs md:text-lg font-thin">
+        <p className="flex justify-center text-center mx-7 md:mx-36 leading-normal md:leading-normal text-xs md:text-lg font-thin">
           'GrowHub: Where Heritage Blooms At GrowHub', we believe in the
           enduring power of human creativity and the importance of preserving
           our rich cultural heritage. We are more than just an e-commerce
@@ -49,7 +49,7 @@ export default function AboutBrand() {
         </p>
       </div>
 
-      <div className="mt-10  mx-10 flex  justify-center">
+      <div className="mt-10  mx-8 flex  justify-center">
         <Splide
           options={{
             type: "slide",
@@ -72,7 +72,7 @@ export default function AboutBrand() {
                   alt={icon.alt}
                   className="md:w-[50px] md:h-[50px] w-[30px] h-[30px] object-contain"
                 />
-                <h1 className="mt-2 text-[10px] font-thin text-neutral-500 text-center">
+                <h1 className="mt-2 text-[10px] font-thin text-neutral-800 text-center">
                   {icon.label}
                 </h1>
               </div>

@@ -13,13 +13,17 @@ export default function Navbar() {
       <div className="flex items-center justify-between px-2 md:px-4 h-16">
         <div className="flex items-center justify-center">
          <Link href={"/"}>
-         
+         {/* TODO: {BUG}  the logo is big on intial load then it get to its usual size  */}
+         <div className="flex justify-center
+          items-center shrink-0">
+
           <Image
             src="/brownLogo.png"
             alt="logo"
-            className="  "
+            className=" h-12 w-30 "
             width={120} height={120}
-          />
+            />
+            </div>
          </Link>
         </div>
 

@@ -2,7 +2,7 @@ import Link from "next/link";
 export default function ProductCard({ items }) {
   return (
     <div className="w-full py-8 ">
-      <div className="max-w-7xl md:mx-auto mx-3">
+      <div className="max-w-screen  ">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 sm:gap-6 lg:gap-6">
           {items.map((product) => {
             
@@ -45,7 +45,7 @@ export default function ProductCard({ items }) {
                   <h3 className="text-sm md:text-xs text-amber-900 line-clamp-2 flex-grow">
                     {product.name}
                   </h3>
-                  <div className="flex flex-row items-baseline mb-2 md:mb-2">
+                  <div className="flex flex-row items-baseline mb-2 ">
                     <p className="text-slate-800 font-light text-lg">₹{product.unit_price}</p>
                     {off > 0 && (
                       <p className="ml-2 font-light line-through text-xs text-slate-900">
@@ -56,7 +56,7 @@ export default function ProductCard({ items }) {
                   
                   </div>
 
-<div className="flex flex-row gap-2 justify-center">
+<div className="flex flex-row gap-2 justify-center  items-center">
                    {isAvailable && (
                      <button className=" rounded-full  bg-[#5A827E] hover:shadow-md text-white  items-center justify-center gap-3 text-xs px-4 py-2 cursor-pointer transition-colors duration-300 ">
                         Buy Now

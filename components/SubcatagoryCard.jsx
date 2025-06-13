@@ -13,7 +13,7 @@ export default function SubCategoryCard({ categories }) {
 
   return (
     <div className="w-full py-5 flex ">
-      <div className="max-w-7xl md:mx-auto ">
+      <div className="">
         <div className="grid grid-cols-3 sm:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
           {filteredCategories.map((item) => (
             <Link
