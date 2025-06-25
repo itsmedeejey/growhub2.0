@@ -1,4 +1,5 @@
 "use client"
+import Image from "next/image";
 import React from "react";
 import HTMLFlipBook from "react-pageflip";
 
@@ -63,7 +64,9 @@ export default function Catalouge () {
       >
         {imagePages.map((src, index) => (
           <div key={index} className=" bg-white overflow-hidden">
-            <img
+            <Image
+              width={500}  
+              height={500}
               src={src}
               alt={`Page ${index + 1}`}
               className="w-full h-full object-cover"

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 export default function ProductCard({ items }) {
   return (
     <div className="w-full py-8 ">
@@ -32,7 +33,9 @@ export default function ProductCard({ items }) {
                     {!isAvailable && (
                       <div className="text-slate-900 absolute z-10 px-3  py-1 text-xs md:text-[8px]  font-light bg-red-300 shadow-2xl rounded-full mr-3 mt-2 right-0 ">Sold Out</div>
                     )}
-                  <img
+                  <Image
+                      width={500}
+                      height={500}
                     src={product_img}
                     alt={product.name}
                     className="aspect-[4/5] cursor-pointer object-cover hover:scale-105 transition-transform duration-400"

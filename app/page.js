@@ -8,7 +8,6 @@ import JourneySlide from "@/components/journeySlide"
 import Instafeed from "@/components/instaFeed"
 import Artsiansec from "@/components/artsiansection"
 import Collab from "@/components/colab"
-import Clarity from '@microsoft/clarity';
 
 export default function Home(){
     return(

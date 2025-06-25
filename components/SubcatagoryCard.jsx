@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useParams } from "next/navigation";
+import Image from "next/image";
 
 export default function SubCategoryCard({ categories }) {
   const params = useParams();
@@ -21,9 +22,13 @@ export default function SubCategoryCard({ categories }) {
               key={item.category_id}
               className="bg-white cursor-pointer shadow-xs hover:shadow-md transition-shadow duration-200 overflow-hidden flex flex-col h-full"
             >
+              
               <div className="aspect-[4/5] h-full overflow-hidden relative">
-                <img
-                  src={item.logo}
+                <Image
+
+                      width={500}
+                      height={500}
+                  src={`${item.logo}`}
                   alt={item.name}
                   className="relative aspect-[4/5] object-cover hover:scale-105 transition-transform duration-200"
                 />

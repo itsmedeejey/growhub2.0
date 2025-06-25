@@ -67,7 +67,9 @@ export default function AboutBrand() {
           {icons.map((icon, index) => (
             <SplideSlide key={index}>
               <div className="flex flex-col items-center">
-                <img
+                <Image
+                  width={500}
+                  height={500}
                   src={icon.src}
                   alt={icon.alt}
                   className="md:w-[50px] md:h-[50px] w-[30px] h-[30px] object-contain"

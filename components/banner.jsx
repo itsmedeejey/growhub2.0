@@ -37,7 +37,7 @@ export default function Banner(){
                   <img
                     src={img}
                     className="w-full h-full "
-                    onClick={() => handleImageClick(idx)}
+                    // onClick={() => handleImageClick(idx)}
                     loading="lazy"
                   />
                 </SplideSlide>
