@@ -1,5 +1,5 @@
 import Link from "next/link";
-
+import Image from "next/image";
 export default function CategoryCard({ categories }) {
   return (
     <div className="w-full py-5 font-thin">
@@ -9,7 +9,10 @@ export default function CategoryCard({ categories }) {
             <Link key={item.id} href={`/subCategories/${item.id}`}>
               <div className=" cursor-pointer shadow-md hover:shadow-lg transition-shadow duration-200 overflow-hidden flex flex-col h-full">
                 <div className="aspect-[4.5/5] overflow-hidden relative ">
-                  <img
+                  <Image
+
+                      width={500}
+                      height={500}
                     src={item.logo}
                     alt={item.name}
                     className="w-full h-full aspect-[4/5]  object-cover hover:scale-105 transition-transform duration-200"

@@ -136,7 +136,9 @@ const [relatedProducts, setRelatedProducts] = useState([]);
             >
               {images.map((img, idx) => (
                 <SplideSlide key={idx}>
-                  <img
+                  <Image
+                  width={500}
+                  height={500}
                     src={img}
                     alt={`${product.name} ${idx + 1}`}
                     className="w-full h-[390px] sm:h-[480px] md:h-[550px] lg:h-[350px] object-cover cursor-zoom-in rounded-lg"

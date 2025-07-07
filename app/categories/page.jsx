@@ -1,8 +1,5 @@
-import  Navbar  from "@/components/Navbar"
-import  Footer  from "@/components/Footer"
 import  Categories  from "@/testData/catagoryData"
 import  CategoryCard  from "@/components/categoryCard"
-import Banner from "@/components/banner"
 import Image from "next/image"
 export default function CatagoriesPage(){
     return(

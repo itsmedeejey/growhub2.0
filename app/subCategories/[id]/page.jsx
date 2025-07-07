@@ -1,5 +1,4 @@
-import Navbar  from "@/components/Navbar";
-import  Footer  from "@/components/Footer";
+
 import subcatData  from "@/testData/subcatData";
 import  SubCatagoryCard  from "@/components/SubcatagoryCard";
 import Banner from "@/components/banner";

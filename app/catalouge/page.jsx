@@ -1,7 +1,5 @@
 "use client"
 import Catalouge from "@/components/catalouge";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 export default function catPage(){
     return(
         <>
