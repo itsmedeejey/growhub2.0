@@ -42,6 +42,7 @@ export default function AboutUs() {
         <h1 className="w-65 text-xs text-amber-900 ">Winners of the prestigious Startup Maharathi Challenge 2025 (B2B Category)</h1>
       </div>
 
+        <div className="bg-[url(/about-page/straws.png)] m-0 h-12 bg-repeat rounded-xl"></div>
       {/* Content Sections */}
       <div className="flex flex-col   gap-3 items-start">
         {/* Section 1 */}
@@ -133,7 +134,6 @@ export default function AboutUs() {
       </div>
 
       {/* Our Vision for Tomorrow */}
-      <div className="bg-[url(/about-page/straws.png)] m-0 h-12 bg-repeat rounded-xl"></div>
       <div className="mt-10 text-center ">
         <h1 className="text-3xl md:text-4xl  font-medium">
           Our Vision for Tomorrow: Growing Together
