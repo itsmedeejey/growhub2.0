@@ -5,14 +5,14 @@ export default function AboutUs() {
   return (
     <div className="mx-3 md:mx-14">
       {/* Heading */}
-      <div className="flex w-full items-center justify-center text-center mt-10  text-amber-900">
+      <div className="flex w-full items-center justify-center text-center mt-5 md:mt-10  text-amber-900">
         <h1 className="text-xl md:text-3xl  font-serif">
           GROWHUB from HERITAGE to LIVELIHOOD
         </h1>
       </div>
 
       {/* Intro Text */}
-      <div className="mx-10 md:mx-50 text-neutral-700 mt-5 mb-3 flex flex-col items-center text-center">
+      <div className=" md:mx-50 text-neutral-700 mt-5 mb-3 flex flex-col items-center text-center">
         <p className="text-sm  ">
           A journey born from the heart of Northeast India. We're more than just
           a brand; we're a passionate community on a mission to bring incredible
@@ -43,9 +43,9 @@ export default function AboutUs() {
       </div>
 
       {/* Content Sections */}
-      <div className="flex flex-col  gap-3 items-start">
+      <div className="flex flex-col   gap-3 items-start">
         {/* Section 1 */}
-        <div className="flex flex-col-reverse md:flex-row items-center  justify-center gap-2 bg-[#] rounded-sm p-3 m-3 max-w-[750px] ">
+        <div className="flex flex-col-reverse group md:flex-row items-center  justify-center gap-2 bg-[#] rounded-sm p-3 m-3 max-w-[750px] ">
           <div className="flex-1 md:text-left text-center ">
             <h2 className="text-2xl font-medium mb-2 text-amber-900">
               The Story Behind Our Craft
@@ -61,9 +61,9 @@ export default function AboutUs() {
               transforming these challenges into opportunities.
             </p>
           </div>
-          <div className="items-center md:justify-center flex">
+          <div className="items-center   overflow-hidden md:justify-center  flex">
             <Image
-              className="h-auto w-72   items-center justify-center  "
+              className="h-auto w-72   items-center justify-center transition-all duration-350  group-hover:scale-[105%] "
               src="/about-page/working-women.jpg"
               alt="Artisan at work"
               width={500}
@@ -75,11 +75,11 @@ export default function AboutUs() {
 
       {/* Section 2 */}
       <div className="flex flex-col gap-3 items-end">
-        <div className="flex flex-col md:flex-row gap-5 items-center justify-center rounded-sm p-3 m-3 max-w-[750px]">
-          <div className="items-center md:justify-center flex">
+        <div className="flex flex-col md:flex-row group gap-5 items-center justify-center rounded-sm p-3 m-3 max-w-[750px]">
+          <div className="items-center overflow-hidden md:justify-center flex">
             <Image
-              className=" h-auto w-72 items-center justify-center "
-              src="/about-page/working-women.jpg"
+              className=" h-auto w-72 items-center justify-center transition-all duration-350  group-hover:scale-[105%] "
+              src="/about-page/basket.jpg"
               alt="Empowered artisan"
               width={500}
               height={500}
@@ -106,7 +106,7 @@ export default function AboutUs() {
 
       <div className="flex flex-col  gap-3 items-start">
         {/* Section 3 */}
-        <div className="flex flex-col-reverse md:flex-row gap-5 justify-center items-center rounded-sm p-3 m-3 max-w-[750px] ">
+        <div className="flex flex-col-reverse group md:flex-row gap-5 justify-center items-center rounded-sm p-3 m-3 max-w-[750px] ">
           <div className="flex-1 text-center md:text-left">
             <h2 className="text-2xl text-amber-900 font-medium mb-2">
               Our Creations: A Blend of Tradition & Tomorrow
@@ -120,10 +120,10 @@ export default function AboutUs() {
               Amazon, Flipkart, Pepperfry, and IndiaMart.
             </p>
           </div>
-          <div className="items-center md:justify-center flex">
+          <div className="items-center overflow-hidden md:justify-center flex">
             <Image
-              className="h-auto w-72   items-center justify-center  "
-              src="/about-page/working-women.jpg"
+              className="h-auto w-72   items-center justify-center transition-all duration-350  group-hover:scale-[105%]  "
+              src="/about-page/flowers.png"
               alt="Artisan at work"
               width={500}
               height={500}
@@ -206,12 +206,12 @@ export default function AboutUs() {
 
       {/* our  teams  section */}
 
-      <div className="mt-10 text-center ">
-        <h1 className="text-3xl md:text-4xl  font-medium">
+      <div className="mt-14  text-center ">
+        <h1 className="text-2xl mx-5 md:text-4xl  font-medium">
           Meet the passionate team behind GrowHub{" "}
         </h1>
       </div>
-      <div className="mt-5 flex flex-col md:flex-row justify-center items-center">
+      <div className="mt-3  flex flex-col md:flex-row justify-center items-center">
         <Team
           name={"Sakil Ahmed"}
           role={"Founder & CEO"}
