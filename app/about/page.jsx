@@ -21,25 +21,17 @@ export default function AboutUs() {
         </p>
       </div>
       <div className="flex flex-col relative text-center justify-center items-center mb-5">
-        <div className="h-24 w-24 relative ">
-
-        <svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
-          <path
-            d="M972.6 502.3 939 465a40 40 0 0 1-6-44.9l22.8-44.6a40 40 0 0 0-18.4-54.2l-45.2-21.7a40 40 0 0 1-22.7-39.2l4-50a40 40 0 0 0-37.8-43l-50-2.6a40 40 0 0 1-36-27.6l-15.5-47.6A40 40 0 0 0 683 64.3l-47.3 16.6A40 40 0 0 1 592 69.2l-32.6-38a40 40 0 0 0-57.1-3.8L465 61a40 40 0 0 1-44.9 6L375.5 44a40 40 0 0 0-54.2 18.4l-21.7 45.2a40 40 0 0 1-39.2 22.7l-50-4a40 40 0 0 0-43 37.8l-2.6 50a40 40 0 0 1-27.6 36l-47.6 15.5A40 40 0 0 0 64.3 317l16.6 47.3A40 40 0 0 1 69.2 408l-38 32.6a40 40 0 0 0-3.8 57.1L60.9 535a40 40 0 0 1 6 44.9L44 624.5a40 40 0 0 0 18.4 54.2l45.2 21.7a40 40 0 0 1 22.7 39.2l-4 50a40 40 0 0 0 37.8 43l50 2.6a40 40 0 0 1 36 27.6l15.5 47.6a40 40 0 0 0 51.3 25.3l47.3-16.6a40 40 0 0 1 43.7 11.7l32.6 38a40 40 0 0 0 57.1 3.8l37.3-33.5a40 40 0 0 1 44.9-6l44.6 22.8a40 40 0 0 0 54.2-18.4l21.7-45.2a40 40 0 0 1 39.2-22.6l50 3.8a40 40 0 0 0 43-37.7l2.6-50a40 40 0 0 1 27.6-36l47.6-15.5a40 40 0 0 0 25.3-51.3l-16.6-47.3a40 40 0 0 1 11.7-43.7l38-32.6a40 40 0 0 0 3.8-57.1Z"
-            fill="#F09F33"
-          ></path>
-        </svg>
-        <div  className="absolute top-0 p-2 " >
-        <Image src={"/about-page/winner.svg"}
+       
+        <div  className="w-72 mb-1 " >
+        <Image src={"/about-page/maharathi.png"}
         width={500}
         alt="winner"
         height={500}
+        className="rounded-lg "
         >
-
         </Image>
-    </div>
           </div>
-        <h1 className="w-65 text-xs text-amber-900 ">Winners of the prestigious Startup Maharathi Challenge 2025 (B2B Category)</h1>
+        <h1 className="w-65 text-xs text-amber-900 ">Startup maharathi challenge at Startup Mahakumbh, Bharatmandapam, New Delhi</h1>
       </div>
 
         <div className="bg-[url(/about-page/straws.png)] m-0 h-12 bg-repeat rounded-xl"></div>
@@ -170,7 +162,7 @@ export default function AboutUs() {
           <h1 className="text-3xl md:text-4xl  font-medium">
             Why Choose Growhub?
           </h1>
-          <p className="md:mx-20 mt-4 font-light text-xs md:text-sm">
+          <p className="md:mx-32 mt-4 font-light text-xs md:text-sm">
             When you choose our products, you're not just bringing beauty into
             your life; you're becoming a vital part of a story of growth,
             empowerment, and a sustainable future for all.
@@ -199,6 +191,17 @@ export default function AboutUs() {
             text={
               "GrowHub is your trusted source for distinctive and meaningful gifts for institutions, corporate events, and personal functions. Impress with culturally rich and sustainable items that leave a lasting positive impact."
             }></VisionCard>
+
+
+            <VisionCard
+            
+            title={"Customization to Your Vision"}
+
+                  text={"We offer bespoke customization options for almost all our product lines. Collaborate with our skilled artisans to create unique pieces that perfectly align with your specific needs and aesthetic."}
+            ></VisionCard>
+            <VisionCard title={" Sustainable Raw Materials for Manufacturers & Start-ups: "} text={"Beyond finished products, GrowHub is developing as a reliable supplier of sustainably sourced raw materials like processed bamboo, cane, and natural fibers for other manufacturers and start-ups looking for eco-friendly inputs"}>
+
+            </VisionCard>
            </div>
 
       </div>
