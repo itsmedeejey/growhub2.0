@@ -31,7 +31,7 @@ export default function AboutUs() {
         >
         </Image>
           </div>
-        <h1 className="w-65 text-xs text-amber-900 ">Startup maharathi challenge at Startup Mahakumbh, Bharatmandapam, New Delhi</h1>
+        <h1 className="w-65 text-xs text-amber-900 ">Winner of Startup maharathi challenge 2025 (B2B Category) at Startup Mahakumbh,Bharatmandapam, New Delhi</h1>
       </div>
 
         <div className="bg-[url(/about-page/straws.png)] m-0 h-12 bg-repeat rounded-xl"></div>
