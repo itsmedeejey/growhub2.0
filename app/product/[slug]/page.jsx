@@ -19,53 +19,54 @@ const ProductPage = () => {
   const [dropdownProductDetails, setDropdownProductDetails] = useState(false);
   const [quantity, setQuantity] = useState(1);
   const [product, setProduct] = useState(null);
-const [relatedProducts, setRelatedProducts] = useState([]);
+  const [relatedProducts, setRelatedProducts] = useState([]);
+
+  const { slug } = useParams();
 
   const decrease = () => setQuantity((prev) => (prev > 1 ? prev - 1 : prev));
   const increase = () => setQuantity((prev) => (prev < 100 ? prev + 1 : prev));
 
-  const { slug } = useParams();
   useEffect(() => {
-  if (!slug) return;
+    if (!slug) return;
 
-  const getrelatedProducts = async () => {
-    try {
-      const res = await fetch(`/api/related-products/${slug}`);
-      const related = await res.json();
-      setRelatedProducts(related);
-    } catch (err) {
-      console.error("Error fetching related products:", err);
-    }
-  };
+    const fetchRelated = async () => {
+      try {
+        const res = await fetch(`/api/related-products/${slug}`);
+        const related = await res.json();
+        setRelatedProducts(related);
+      } catch (err) {
+        console.error('Error fetching related products:', err);
+      }
+    };
 
-  getrelatedProducts();
-}, [slug]);
-
+    fetchRelated();
+  }, [slug]);
 
   useEffect(() => {
     if (!slug) return;
 
-    const fetchProductData = async () => {
+    const fetchProduct = async () => {
       try {
-        const response = await axios.get(`/api/product/${slug}`);
-        setProduct(response.data);
-      } catch (error) {
-        console.error('Error fetching product:', error);
+        const res = await axios.get(`/api/product/${slug}`);
+        setProduct(res.data);
+      } catch (err) {
+        console.error('Error fetching product:', err);
       }
     };
-    fetchProductData();
-  },[slug]);
+
+    fetchProduct();
+  }, [slug]);
 
   useEffect(() => {
     if (!product) return;
 
     const getOrCreateDeviceId = () => {
-      let deviceId = localStorage.getItem('device_id');
-      if (!deviceId) {
-        deviceId = crypto.randomUUID();
-        localStorage.setItem('device_id', deviceId);
+      let id = localStorage.getItem('device_id');
+      if (!id) {
+        id = crypto.randomUUID();
+        localStorage.setItem('device_id', id);
       }
-      return deviceId;
+      return id;
     };
 
     const logView = async () => {
@@ -86,22 +87,14 @@ const [relatedProducts, setRelatedProducts] = useState([]);
   }, [product]);
 
   if (!product) {
-    return (
-      <div className="min-h-screen flex flex-col  items-center justify-center">
-        <p>Loading product...</p>
-      </div>
-    );
+    return null; // optional fallback UI like skeleton
   }
 
-  const discount = Math.round(
-    ((product.higher_price - product.unit_price) / product.higher_price) * 100
-  );
-
   const images = [
-    `https://api.growhub.shop/${product.product_thumbnail }`,
-    `https://api.growhub.shop/${product.additional_image_1 }`,
-    `https://api.growhub.shop/${product.additional_image_2 }`,
-    `https://api.growhub.shop/${product.additional_image_3 }`,
+    `https://api.growhub.shop/${product.product_thumbnail}`,
+    `https://api.growhub.shop/${product.additional_image_1}`,
+    `https://api.growhub.shop/${product.additional_image_2}`,
+    `https://api.growhub.shop/${product.additional_image_3}`,
   ];
 
   return (
@@ -137,8 +130,8 @@ const [relatedProducts, setRelatedProducts] = useState([]);
               {images.map((img, idx) => (
                 <SplideSlide key={idx}>
                   <Image
-                  width={500}
-                  height={500}
+                    width={500}
+                    height={500}
                     src={img}
                     alt={`${product.name} ${idx + 1}`}
                     className="w-full h-[390px] sm:h-[480px] md:h-[550px] lg:h-[350px] object-cover cursor-zoom-in rounded-lg"
@@ -169,17 +162,24 @@ const [relatedProducts, setRelatedProducts] = useState([]);
 
           {/* Product Details */}
           <div className="bg-white rounded-xl shadow p-6 flex flex-col">
-            <h1 className="text-xl md:text-2xl font-mediums  text-amber-900 mb-1">{product.name}</h1>
-            <a className="text-blue-800 mb-4" href="#">{product.retailer}</a>
+            <h1 className="text-xl md:text-2xl font-medium text-amber-900 mb-1">
+              {product.name}
+            </h1>
+            <a className="text-blue-800 mb-4" href="#">
+              {product.retailer}
+            </a>
             <p className="text-gray-600 mb-6">{product.description}</p>
 
-            <div className="mb-1">
-              <span className="text-2xl text-amber-900">₹{product.unit_price}</span>
-              <span className="ml-3 line-through text-neutral-800">₹{product.higher_price}</span>
-              <span className="ml-4 bg-green-100 text-green-800 px-2 py-1 rounded text-sm font-medium">
-                {discount}% Discount
-              </span>
-            </div>
+            {/* ✅ Moved discount calc into render block */}
+            {product.higher_price && product.unit_price && (
+              <div className="mb-1">
+                <span className="text-2xl text-amber-900">₹{product.unit_price}</span>
+                <span className="ml-3 line-through text-neutral-800">₹{product.higher_price}</span>
+                <span className="ml-4 bg-green-100 text-green-800 px-2 py-1 rounded text-sm font-medium">
+                  {Math.round(((product.higher_price - product.unit_price) / product.higher_price) * 100)}% Discount
+                </span>
+              </div>
+            )}
 
             <p className="text-xs">Tax Included</p>
             <p className="text-xs mb-2">Delivery Charges Applicable</p>
@@ -197,7 +197,7 @@ const [relatedProducts, setRelatedProducts] = useState([]);
                 <input type="number" readOnly value={quantity} className="w-10 py-1 text-center border" />
                 <button onClick={increase} className="px-3 py-1 border rounded-r-full">+</button>
               </div>
-              <button className="text-md h-10 cursor-pointer  text-white bg-[#CA7842] hover:bg-amber-700  px-5 rounded-3xl">Add to Cart</button>
+              <button className="text-md h-10 cursor-pointer text-white bg-[#CA7842] hover:bg-amber-700 px-5 rounded-3xl">Add to Cart</button>
               <button className="text-md h-10 text-neutral-800 cursor-pointer border rounded-3xl px-5 bg-white hover:bg-[#5A827E] hover:text-white">Buy Now</button>
             </div>
 
@@ -212,7 +212,7 @@ const [relatedProducts, setRelatedProducts] = useState([]);
                 <div key={i} className="flex flex-col items-center text-center pt-2">
                   <img className="h-8" src={`/productpageIcons/${icon.img}`} alt={icon.title} />
                   <h1 className="font-light text-md">{icon.title}</h1>
-                  <p className='font-thin text-8px]'>{icon.desc}</p>
+                  <p className="font-thin text-[10px]">{icon.desc}</p>
                 </div>
               ))}
             </div>
@@ -248,13 +248,11 @@ const [relatedProducts, setRelatedProducts] = useState([]);
       </main>
 
       <section className="mx-5 md:mx-14 md:mt-10 pt-10">
-        <h2 className="text-xl md:text-[26px] text-amber-900 text-center font-thin  mb-1">
+        <h2 className="text-xl md:text-[26px] text-amber-900 text-center font-thin mb-1">
           Explore Related Products
         </h2>
-
-        <ProductCard items={relatedProducts} ></ProductCard>
+        <ProductCard items={relatedProducts} />
       </section>
-
     </div>
   );
 };

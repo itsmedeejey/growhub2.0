@@ -1,5 +1,5 @@
 import Image from "next/image";
-import "@/app/globals.css";
+import "./globals.css";
 export default function Loading(){
     return(
         <div className="bg-amber-900 h-screen justify-center items-center flex

@@ -9,7 +9,8 @@ import Instafeed from "@/components/instaFeed"
 import Artsiansec from "@/components/artsiansection"
 import Collab from "@/components/colab"
 
-export default function Home(){
+export default  async function Home(){
+
     return(
         <div className="">
             
