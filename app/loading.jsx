@@ -32,7 +32,7 @@ export default function Loading(){
 </svg>
 
                 </div>
-            <Image src={"/whitelogo1.png"} alt="logo"
+            <Image src={"/whitelogo.png"} alt="logo"
             width={500}
             height={500}
             className="w-30 h-auto pr-8 mix-blend-lighten slide-up-fade  "
