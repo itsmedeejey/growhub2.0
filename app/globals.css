@@ -53,3 +53,6 @@
 .slide-right{
   animation: slide-right 0.8s ease-out forwards;
 }
+.animate-spin-slow {
+    animation: spin 6s linear infinite;
+  }

@@ -10,6 +10,7 @@ import Artsiansec from "@/components/artsiansection"
 import Collab from "@/components/colab"
 
 export default  async function Home(){
+    await new Promise((resolve) => setTimeout(resolve, 3000));
 
     return(
         <div className="">
