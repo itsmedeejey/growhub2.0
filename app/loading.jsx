@@ -6,7 +6,7 @@ export default function Loading(){
         flex-col
         ">
         
-            <div className="flex   justify-center-safe p-3 w-40 overflow- items-center-safe">
+            <div className="flex   justify-center p-3 w-40 overflow- items-center">
 
                 <div className="absolute  inset-0 flex justify-center items-center z-0   ">
                     <svg
