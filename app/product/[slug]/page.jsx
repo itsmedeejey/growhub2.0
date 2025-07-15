@@ -11,7 +11,7 @@ import { Grid } from '@splidejs/splide-extension-grid';
 import Lightbox from 'yet-another-react-lightbox';
 import 'yet-another-react-lightbox/styles.css';
 import { ChevronDownIcon } from '@heroicons/react/20/solid';
-
+import Faq from '@/components/faq';
 const ProductPage = () => {
   const [open, setOpen] = useState(false);
   const [index, setIndex] = useState(0);
@@ -246,6 +246,14 @@ const ProductPage = () => {
           </div>
         </div>
       </main>
+
+
+
+<Faq></Faq>
+
+
+
+
 
       <section className="mx-5 md:mx-14 md:mt-10 pt-10">
         <h2 className="text-xl md:text-[26px] text-amber-900 text-center font-thin mb-1">
