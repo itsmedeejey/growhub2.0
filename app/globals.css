@@ -47,7 +47,7 @@
 }
 
 .slide-up-fade {
-  animation: slide-up-fade 0.8s ease-out forwards;
+  animation: slide-up-fade 0.8s ease-in-out forwards;
 }
 
 .slide-right{
