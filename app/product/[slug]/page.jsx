@@ -255,7 +255,7 @@ const ProductPage = () => {
 
 
 
-      <section className="mx-5 md:mx-14 md:mt-10 pt-10">
+      <section className="mx-3 md:mx-10 md:mt-10 pt-10">
         <h2 className="text-xl md:text-[26px] text-amber-900 text-center font-thin mb-1">
           Explore Related Products
         </h2>
