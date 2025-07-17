@@ -77,7 +77,7 @@ export default function ProductCard({ items }) {
                         />
                       </button>
                        {isAvailable && (
-                        <button className="w-full md:w-auto rounded-full  bg-[#5A827E] hover:shadow-md text-white  items-center justify-center gap-3 text-xs md:text-md px-4 py-2 cursor-pointer transition-colors duration-300 ">
+                        <button className="w-full md:w-auto rounded-full  bg-[#517471] hover:bg-[#004030] hover:shadow-md text-white  items-center justify-center gap-3 text-xs md:text-md px-4 py-2 cursor-pointer transition-colors duration-300 ">
                           Buy Now
                         </button>)}
                     </div>
