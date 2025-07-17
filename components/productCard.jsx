@@ -25,13 +25,13 @@ export default function ProductCard({ items }) {
                 >
                   <div className="aspect-square overflow-hidden relative">
                     {off > 0 && (
-                      <div className="absolute z-10 rotate-[-45deg] top-4 left-[-35px] pl-3 text-center text-sm text-amber-900 bg-transparent backdrop-blur-xl shadow-md w-28 py-1">
+                      <div className="absolute z-10 rotate-[-45deg] top-4 left-[-35px] pl-3 text-center text-sm text-amber-900 dark:text-amber-900 bg-transparent backdrop-blur-xl shadow-md w-28 py-1">
                         {off}% Off
                       </div>
 
                     )}
                     {!isAvailable && (
-                      <div className="text-slate-900 absolute z-10 px-3  py-1 text-xs md:text-[12px]  font-light bg-red-300 shadow-2xl rounded-full mr-3 mt-2 right-0 ">Sold Out</div>
+                      <div className="text-slate-900 dark:text-slate-900 absolute z-10 px-3  py-1 text-xs md:text-[12px]  font-light bg-red-300 dark:bg-red-300 shadow-2xl rounded-full mr-3 mt-2 right-0 ">Sold Out</div>
                     )}
 <div className="overflow-hidden ">
 
@@ -48,7 +48,7 @@ export default function ProductCard({ items }) {
                   </div>
 
                   <div className="px-2 py-2 flex flex-col ">
-                    <h3 className="text-sm md:text-xs text-amber-900 line-clamp-1 ">
+                    <h3 className="text-sm md:text-xs text-amber-900  dark:text-amber-900 line-clamp-1 ">
                       {product.name}
                     </h3>
                     <div className="flex flex-row items-baseline mb-2 ">
@@ -66,7 +66,7 @@ export default function ProductCard({ items }) {
                      
 
                       <button
-                        className={" w-full h-auto   rounded-full group flex bg-[#EFE5CC] text-slate-800 hover:shadow-md hover:bg-[#CA7842]  hover:text-white items-center justify-center  gap-2 text-xs px-4 py-2 cursor-pointer transition-colors duration-300 "
+                        className={" w-full h-auto  rounded-full group flex bg-[#EFE5CC] dark:bg-[#EFE5CC] text-slate-800 dark:text-slate-800 hover:shadow-md hover:bg-[#CA7842]  hover:text-white items-center justify-center  gap-2 text-xs px-4 py-2 cursor-pointer transition-colors duration-300 "
                         }
                       >
                         <span className="text-xs md:text-[10px]">Add to Cart</span>
@@ -77,7 +77,7 @@ export default function ProductCard({ items }) {
                         />
                       </button>
                        {isAvailable && (
-                        <button className="w-full h-auto rounded-full  bg-[#517471] hover:bg-[#004030] hover:shadow-md text-white  items-center justify-center text-xs md:text-md px-4 py-2 cursor-pointer transition-colors duration-300 ">
+                        <button className="w-full h-auto rounded-full    dark:bg-[#517471] bg-[#517471] hover:bg-[#004030] hover:shadow-md text-white dark:text-white items-center justify-center text-xs md:text-md px-4 py-2 cursor-pointer transition-colors duration-300 ">
                           Buy Now
                         </button>)}
                     </div>
