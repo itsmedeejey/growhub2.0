@@ -62,14 +62,14 @@ export default function ProductCard({ items }) {
 
                     </div>
 
-                    <div className="flex flex-col md:flex-row gap-2 md:gap-5 justify-center  items-center">
+                    <div className="flex flex-row gap-1  items-center">
                      
 
                       <button
-                        className={" w-full md:w-auto  rounded-full group flex bg-[#EFE5CC] text-slate-800 hover:shadow-md hover:bg-[#CA7842]  hover:text-white items-center justify-center gap-3 text-xs px-4 py-2 cursor-pointer transition-colors duration-300 "
+                        className={" w-full h-auto   rounded-full group flex bg-[#EFE5CC] text-slate-800 hover:shadow-md hover:bg-[#CA7842]  hover:text-white items-center justify-center  gap-2 text-xs px-4 py-2 cursor-pointer transition-colors duration-300 "
                         }
                       >
-                        <span className="">Add to Cart</span>
+                        <span className="text-xs md:text-[10px]">Add to Cart</span>
                         <img
                           src="/navbarIcon/cart.svg"
                           alt="Cart Icon"
@@ -77,7 +77,7 @@ export default function ProductCard({ items }) {
                         />
                       </button>
                        {isAvailable && (
-                        <button className="w-full md:w-auto rounded-full  bg-[#517471] hover:bg-[#004030] hover:shadow-md text-white  items-center justify-center gap-3 text-xs md:text-md px-4 py-2 cursor-pointer transition-colors duration-300 ">
+                        <button className="w-full h-auto rounded-full  bg-[#517471] hover:bg-[#004030] hover:shadow-md text-white  items-center justify-center text-xs md:text-md px-4 py-2 cursor-pointer transition-colors duration-300 ">
                           Buy Now
                         </button>)}
                     </div>
