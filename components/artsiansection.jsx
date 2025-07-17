@@ -10,17 +10,21 @@ export default function Artsiansec() {
       name: "Rise of self help groups in northeast India",
       src: "/artsian/newArticianImage.png",
     },
+{
+      name: "Weaving the Spirit of Northeast India-A Journey Through Its Textile Traditions",
+      src: "/artsian/Weaving.png",
+    },
     {
       name: "The Bell Metal Industry of Sarthebari",
       src: "/artsian/The-Bell-Metal-Industry-of-Sarthebari.png",
     },
     {
-      name: "The Global Treasure of Northeast India",
-      src: "/artsian/The-Global-Treasure-of-Northeast-India.png",
-    },
-    {
       name: "Water Hyacinth – A Blessing in Disguise for Assam",
       src: "/artsian/Water-Hyacinth-A-Blessing-in-Disguise-For-Assam.png",
+    },
+    {
+      name: "The Global Treasure of Northeast India",
+      src: "/artsian/The-Global-Treasure-of-Northeast-India.png",
     },
   ];
 
@@ -31,7 +35,7 @@ export default function Artsiansec() {
           options={{
             type: "loop",
             perPage: 4,
-            gap: "5px",
+            gap: "1px",
             pagination: false,
             arrows: false,
             drag: true,
@@ -45,14 +49,14 @@ export default function Artsiansec() {
         >
           {artsianImages.map((product, idx) => (
             <SplideSlide key={idx}>
-              <div className="md:p-2 flex flex-col justify-center items-center">
+              <div className="md:p-2 overflow-hidden flex flex-col justify-center items-center">
                 <img
                   src={product.src}
                   alt={product.name}
-                  className="aspect-square rounded-full h-20 transform transition-transform duration-300 hover:scale-[105%]"
+                  className="aspect-square object-cover rounded-full h-30 transform transition-transform duration-300 hover:scale-[105%]"
                   loading="lazy"
                 />
-                <h1 className="md:text-xs text-[8px] font-thin mt-2 text-center  text-amber-900">
+                <h1 className="md:text-xs text-[8px]  font-thin mt-2  line-clamp-1 text-center  text-amber-900">
                   {product.name}
                 </h1>
               </div>
@@ -62,10 +66,10 @@ export default function Artsiansec() {
           <SplideSlide>
             <div className="md:p-2 flex flex-col justify-center items-center">
               <Link href="/home" className="flex flex-col items-center">
-                <div className="rounded-full h-20 w-20 bg-amber-900 border border-gray-300 flex items-center justify-center ">
+                <div className="rounded-full h-30 w-30 bg-amber-900 border border-gray-300 flex items-center justify-center ">
                   <span className="text-2xl font-bold text-white">→</span>
                 </div>
-                <p className="  md:text-xs text-[8px] mt-2 text-center text-amber-900  ">
+                <p className="  line-clamp-1  md:text-xs text-[8px] mt-2 text-center text-amber-900  ">
                   View All
                 </p>
               </Link>
@@ -75,69 +79,6 @@ export default function Artsiansec() {
       </div>
 
 
-<div className="flex  justify-center items-center ">
-
-      <div className=" grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-5 md:gap-10 px-3 md:px-10 py-5 md:py-10">
-        {/* <video
-          className=" overflow-x-hidden mt-10 rounded-xl"
-          width="1280"
-          height="900"
-          controls
-          preload="auto"
-          muted
-          
-          autoPlay
-          loop
-          playsInline
-          >
-          <source src="/videos/artsian.mp4" type="video/mp4" />
-          </video> */}
-        <video  className="w-auto h-[400px]  justify-center items-center "
-
-width="1280"
-height="900"
-
-preload="auto"
-muted
-
-autoPlay
-loop
-playsInline >
-          <source src="/videos/artvid2.mp4" type="video/mp4"/>
-        </video>
-
-      
-      
-      
-       
-        <video className="w-auto h-[400px]  "
-         width="1280"
-         height="900"
-         
-         preload="auto"
-         muted
-         autoPlay
-         loop
-         playsInline >
-          <source src="/videos/artvid4.mp4" type="video/mp4"/>
-        </video>
-
-       
-        <video className="w-auto h-[400px] hidden md:block  "
-         width="1280"
-         height="900"
-         
-         preload="auto"
-         muted
-         autoPlay
-         loop
-         playsInline >
-          <source src="/videos/artvid5.mp4" type="video/mp4"/>
-        </video>
-
-       
-      </div>
-            </div>
     </div>
   );
 }

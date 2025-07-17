@@ -6,13 +6,19 @@ import "@splidejs/splide/dist/css/splide.min.css";
 
 export default function Banner(){
     const bannerImg = [
-        "/banner/1.png",
-        "/banner/2.png",
-        "/banner/3.png",
-        "/banner/4.png",
-        "/banner/5.png",
-        "/banner/6.png",
-        "/banner/7.png",
+        // "/banner/1.png",
+        // "/banner/2.png",
+        // "/banner/3.png",
+        // "/banner/4.png",
+        // "/banner/5.png",
+        // "/banner/6.png",
+        // "/banner/7.png",
+
+        "/banner/8.png",
+        "/banner/9.png",
+        "/banner/10.png",
+        "/banner/11.png",
+        "/banner/12.png",
     ]
     return(
         <div>

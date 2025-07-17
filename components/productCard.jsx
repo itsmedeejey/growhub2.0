@@ -23,7 +23,7 @@ export default function ProductCard({ items }) {
                   key={product.id}
                   className="bg-white hover:rounded-md ease-in-out duration-300 shadow-sm hover:shadow-md transition-shadow  overflow-hidden flex flex-col"
                 >
-                  <div className="aspect-[4/5] overflow-hidden relative">
+                  <div className="aspect-square overflow-hidden relative">
                     {off > 0 && (
                       <div className="absolute z-10 rotate-[-45deg] top-4 left-[-35px] pl-3 text-center text-sm text-amber-900 bg-transparent backdrop-blur-xl shadow-md w-28 py-1">
                         {off}% Off
@@ -31,20 +31,23 @@ export default function ProductCard({ items }) {
 
                     )}
                     {!isAvailable && (
-                      <div className="text-slate-900 absolute z-10 px-3  py-1 text-xs md:text-[8px]  font-light bg-red-300 shadow-2xl rounded-full mr-3 mt-2 right-0 ">Sold Out</div>
+                      <div className="text-slate-900 absolute z-10 px-3  py-1 text-xs md:text-[12px]  font-light bg-red-300 shadow-2xl rounded-full mr-3 mt-2 right-0 ">Sold Out</div>
                     )}
+<div className="overflow-hidden ">
+
                     <Image
                       width={500}
                       height={500}
                       src={product_img}
                       alt={product.name}
-                      className="aspect-[4/5] cursor-pointer object-cover hover:scale-105 transition-transform duration-400"
+                      className="aspect-square cursor-pointer object- hover:scale-[103%] transition-transform duration-400"
 
                     />
+</div>
 
                   </div>
 
-                  <div className="px-2 py-1 flex  flex-col flex-grow">
+                  <div className="px-2 py-2 flex flex-col ">
                     <h3 className="text-sm md:text-xs text-amber-900 line-clamp-2 flex-grow">
                       {product.name}
                     </h3>
@@ -59,23 +62,24 @@ export default function ProductCard({ items }) {
 
                     </div>
 
-                    <div className="flex flex-row gap-2 justify-center  items-center">
-                      {isAvailable && (
-                        <button className=" rounded-full  bg-[#5A827E] hover:shadow-md text-white  items-center justify-center gap-3 text-xs px-4 py-2 cursor-pointer transition-colors duration-300 ">
-                          Buy Now
-                        </button>)}
+                    <div className="flex flex-col md:flex-row gap-2 md:gap-5 justify-center  items-center">
+                     
 
                       <button
-                        className={" rounded-full group flex bg-[#EFE5CC] text-slate-800 hover:shadow-md hover:bg-[#CA7842]  hover:text-white items-center justify-center gap-3 text-xs px-4 py-2 cursor-pointer transition-colors duration-300 "
+                        className={" w-full md:w-auto  rounded-full group flex bg-[#EFE5CC] text-slate-800 hover:shadow-md hover:bg-[#CA7842]  hover:text-white items-center justify-center gap-3 text-xs px-4 py-2 cursor-pointer transition-colors duration-300 "
                         }
                       >
-                        <span>Add to Cart</span>
+                        <span className="">Add to Cart</span>
                         <img
                           src="/navbarIcon/cart.svg"
                           alt="Cart Icon"
-                          className={"h-5 group-hover:invert filter brightness-0 transition-transform duration-300 group-hover:scale-[120%] group-hover:rotate-6 "}
+                          className={"h-4 group-hover:invert filter brightness-0 transition-transform duration-300 group-hover:scale-[120%] group-hover:rotate-6 "}
                         />
                       </button>
+                       {isAvailable && (
+                        <button className="w-full md:w-auto rounded-full  bg-[#5A827E] hover:shadow-md text-white  items-center justify-center gap-3 text-xs md:text-md px-4 py-2 cursor-pointer transition-colors duration-300 ">
+                          Buy Now
+                        </button>)}
                     </div>
                   </div>
                 </div>
