@@ -48,7 +48,7 @@ export default function ProductCard({ items }) {
                   </div>
 
                   <div className="px-2 py-2 flex flex-col ">
-                    <h3 className="text-sm md:text-xs text-amber-900 line-clamp-2 flex-grow">
+                    <h3 className="text-sm md:text-xs text-amber-900 line-clamp-1 ">
                       {product.name}
                     </h3>
                     <div className="flex flex-row items-baseline mb-2 ">
